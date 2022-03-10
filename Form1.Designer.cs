@@ -41,9 +41,15 @@ namespace PDFMassivePrinter
             this.label1 = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPrinterName = new System.Windows.Forms.Label();
+            this.cbSelectPrinter = new System.Windows.Forms.ComboBox();
+            this.lblPaperSize = new System.Windows.Forms.Label();
+            this.cbSelectPaperSize = new System.Windows.Forms.ComboBox();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pdfViewer1
@@ -54,7 +60,7 @@ namespace PDFMassivePrinter
             this.pdfViewer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pdfViewer1.Name = "pdfViewer1";
             this.pdfViewer1.Padding = new System.Windows.Forms.Padding(10);
-            this.pdfViewer1.Size = new System.Drawing.Size(781, 506);
+            this.pdfViewer1.Size = new System.Drawing.Size(481, 506);
             this.pdfViewer1.TabIndex = 7;
             // 
             // panel4
@@ -66,7 +72,7 @@ namespace PDFMassivePrinter
             this.panel4.Location = new System.Drawing.Point(725, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(791, 662);
+            this.panel4.Size = new System.Drawing.Size(491, 662);
             this.panel4.TabIndex = 9;
             // 
             // panel2
@@ -79,7 +85,7 @@ namespace PDFMassivePrinter
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(5, 511);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(781, 146);
+            this.panel2.Size = new System.Drawing.Size(481, 146);
             this.panel2.TabIndex = 12;
             // 
             // printAll
@@ -165,6 +171,64 @@ namespace PDFMassivePrinter
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cbSelectPaperSize);
+            this.panel3.Controls.Add(this.lblPaperSize);
+            this.panel3.Controls.Add(this.cbSelectPrinter);
+            this.panel3.Controls.Add(this.lblPrinterName);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1216, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10);
+            this.panel3.Size = new System.Drawing.Size(300, 662);
+            this.panel3.TabIndex = 11;
+            // 
+            // lblPrinterName
+            // 
+            this.lblPrinterName.AutoSize = true;
+            this.lblPrinterName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPrinterName.Location = new System.Drawing.Point(10, 10);
+            this.lblPrinterName.Name = "lblPrinterName";
+            this.lblPrinterName.Padding = new System.Windows.Forms.Padding(5);
+            this.lblPrinterName.Size = new System.Drawing.Size(70, 25);
+            this.lblPrinterName.TabIndex = 1;
+            this.lblPrinterName.Text = "Impresora";
+            // 
+            // cbSelectPrinter
+            // 
+            this.cbSelectPrinter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbSelectPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelectPrinter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbSelectPrinter.FormattingEnabled = true;
+            this.cbSelectPrinter.Location = new System.Drawing.Point(10, 35);
+            this.cbSelectPrinter.Name = "cbSelectPrinter";
+            this.cbSelectPrinter.Size = new System.Drawing.Size(280, 21);
+            this.cbSelectPrinter.TabIndex = 2;
+            this.cbSelectPrinter.SelectedIndexChanged += new System.EventHandler(this.cbSelectPrinter_SelectedIndexChanged);
+            // 
+            // lblPaperSize
+            // 
+            this.lblPaperSize.AutoSize = true;
+            this.lblPaperSize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPaperSize.Location = new System.Drawing.Point(10, 56);
+            this.lblPaperSize.Name = "lblPaperSize";
+            this.lblPaperSize.Padding = new System.Windows.Forms.Padding(5);
+            this.lblPaperSize.Size = new System.Drawing.Size(91, 25);
+            this.lblPaperSize.TabIndex = 3;
+            this.lblPaperSize.Text = "Tamaño Papel";
+            // 
+            // cbSelectPaperSize
+            // 
+            this.cbSelectPaperSize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbSelectPaperSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelectPaperSize.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbSelectPaperSize.FormattingEnabled = true;
+            this.cbSelectPaperSize.Location = new System.Drawing.Point(10, 81);
+            this.cbSelectPaperSize.Name = "cbSelectPaperSize";
+            this.cbSelectPaperSize.Size = new System.Drawing.Size(280, 21);
+            this.cbSelectPaperSize.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -173,6 +237,7 @@ namespace PDFMassivePrinter
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1516, 662);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "PDF Massive Printer - By JDevelops";
@@ -181,6 +246,8 @@ namespace PDFMassivePrinter
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,6 +266,11 @@ namespace PDFMassivePrinter
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbSelectPaperSize;
+        private System.Windows.Forms.Label lblPaperSize;
+        private System.Windows.Forms.ComboBox cbSelectPrinter;
+        private System.Windows.Forms.Label lblPrinterName;
     }
 }
 
