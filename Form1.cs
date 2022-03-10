@@ -53,11 +53,29 @@ namespace PDFMassivePrinter
 
         private void btnDeleteFile_Click(object sender, EventArgs e)
         {
+            var currentSelectIndex = documentsListBox.SelectedIndex;
+
             if (documentsListBox.SelectedIndex >= 0)
             {
                 documentsListBox.Items.RemoveAt(documentsListBox.SelectedIndex);
 
+                this.pdfViewer1.Document.Dispose();
                 this.pdfViewer1.Visible = false;
+
+
+                if (documentsListBox.Items.Count >= 0)
+                {
+                    if (documentsListBox.Items.Count >= currentSelectIndex + 1)
+                    {
+                        documentsListBox.SelectedIndex = currentSelectIndex;
+                    }
+                    else
+                    {
+                        documentsListBox.SelectedIndex = currentSelectIndex-1;
+                    }
+                }
+                
+
             }
 
         }
@@ -141,76 +159,8 @@ namespace PDFMassivePrinter
                     }
                 }
             }
-            
-
-            
-
-            
+                        
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //PrintDocument prtdoc = new PrintDocument();
-            //string strDefaultPrinter = prtdoc.PrinterSettings.PrinterName;
-
-            ////CARGAR LISTADO DE IMPRESORAS INSTALADAS
-            //foreach (string strPrinter in PrinterSettings.InstalledPrinters)
-            //{
-            //    cbSelectPrinter.Items.Add(strPrinter);
-            //    if (strPrinter == strDefaultPrinter)
-            //    {
-            //        //SETEAR PREDETERMINADAS
-            //        cbSelectPrinter.SelectedIndex = cbSelectPrinter.Items.IndexOf(strPrinter);
-            //    }
-            //}
-
-            //cbSelectPaperSize.DisplayMember = "PaperName";
-
-
-            //foreach (PaperSize paperSize in prtdoc.PrinterSettings.PaperSizes)
-            //{
-            //    cbSelectPaperSize.Items.Add(paperSize.PaperName);
-
-            //    if (paperSize.Kind == prtdoc.PrinterSettings.DefaultPageSettings.PaperSize.Kind)
-            //    {
-            //        //SETEAR PREDETERMINADA
-            //        cbSelectPaperSize.SelectedIndex = cbSelectPaperSize.Items.IndexOf(paperSize.PaperName);
-            //    }
-            //}
-
-
-
-
-
-
-
-
-        }
-
-        private void cbSelectPrinter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            PrintDocument prtdoc = new PrintDocument();
-            string strDefaultPrinter = cbSelectPrinter.Text;
-
-
-            cbSelectPaperSize.Items.Clear();
-
-            var test = GetPrinterPageInfo(strDefaultPrinter);
-
-            //test.PaperSize.Kind;
-
-            foreach (PaperSize paperSize in prtdoc.PrinterSettings.PaperSizes)
-            {
-                cbSelectPaperSize.Items.Add(paperSize);
-
-                if (paperSize.Kind == test.PaperSize.Kind)
-                {
-                    //SETEAR PREDETERMINADA
-                    cbSelectPaperSize.SelectedIndex = cbSelectPaperSize.Items.IndexOf(paperSize);
-                }
-            }
-        }
-
 
 
 
