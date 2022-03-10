@@ -55,6 +55,7 @@ namespace PDFMassivePrinter
             this.pdfViewer1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pdfViewer1.Name = "pdfViewer1";
             this.pdfViewer1.Padding = new System.Windows.Forms.Padding(10);
+            this.pdfViewer1.ShowToolbar = false;
             this.pdfViewer1.Size = new System.Drawing.Size(649, 506);
             this.pdfViewer1.TabIndex = 7;
             // 
