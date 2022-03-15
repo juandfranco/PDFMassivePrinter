@@ -6,7 +6,6 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
-    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
